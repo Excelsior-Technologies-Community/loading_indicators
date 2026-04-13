@@ -1,39 +1,154 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Flutter Loading Indicators
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+A lightweight and customizable loading indicators library for Flutter.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+This package provides simple and flexible loading widgets that developers can easily integrate into their applications. It includes animated loaders such as spinning indicators, animated dots, and progress bars.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## ✨ Features
 
-## Features
+* Simple and easy to use
+* Lightweight implementation
+* Customizable size, color, and stroke width
+* Animated loading indicators
+* Works on Android, iOS, Web, and Desktop
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## 📦 Installation
 
-## Getting started
+Add this to your `pubspec.yaml` file:
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  flutter_loading_indicators: 
+     path: ../
 ```
 
-## Additional information
+Then run:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```bash
+flutter pub get
+```
+
+Import the package:
+
+```dart
+import 'package:flutter_loading_indicators/flutter_loading_indicators.dart';
+```
+
+## 🚀 Usage
+
+### Dots Loader
+
+```dart
+LoadingIndicator(
+  type: LoaderType.dots,
+  size: 40,
+  color: Colors.blue,
+  strokeWidth: 4,
+)
+```
+
+### Spin Loader
+
+```dart
+SpinLoader(
+  size: 50,
+  color: Colors.red,
+  strokeWidth: 4,
+)
+```
+
+### Progress Bar Loader
+
+```dart
+LoadingIndicator(
+  type: LoaderType.progressBar,
+  size: 100,
+  color: Colors.black,
+  strokeWidth: 6,
+)
+```
+
+## ⚙️ Parameters
+
+### LoadingIndicator
+
+| Parameter   | Type       | Description         |
+| ----------- | ---------- | ------------------- |
+| type        | LoaderType | Select loader type  |
+| size        | double     | Loader width/size   |
+| color       | Color      | Loader color        |
+| strokeWidth | double     | Thickness of loader |
+
+### SpinLoader
+
+| Parameter   | Type   | Description                 |
+| ----------- | ------ | --------------------------- |
+| size        | double | Loader size                 |
+| color       | Color  | Loader color                |
+| strokeWidth | double | Circular progress thickness |
+
+## 📱 Example
+
+```dart
+Column(
+  children: [
+    LoadingIndicator(
+      type: LoaderType.dots,
+      size: 40,
+      color: Colors.blue,
+      strokeWidth: 4,
+    ),
+
+    SpinLoader(
+      size: 50,
+      color: Colors.red,
+      strokeWidth: 4,
+    ),
+
+    LoadingIndicator(
+      type: LoaderType.progressBar,
+      size: 100,
+      color: Colors.black,
+      strokeWidth: 6,
+    ),
+  ],
+)
+```
+
+## 📁 Recommended Folder Structure
+```
+flutter_loading_indicators
+│
+├── lib
+│   ├── flutter_loading_indicators.dart
+│   │
+│   └── src
+│       ├── dots_loader.dart
+│       ├── loader_type.dart
+│       ├── loading_indicator.dart
+│       └── spin_loader.dart
+│
+├── example
+│   ├── pubspec.yaml
+│   │
+│   └── lib
+│       └── main.dart
+│
+├── test
+│   └── flutter_loading_indicators_test.dart
+│
+├── README.md
+├── CHANGELOG.md
+├── LICENSE
+└── pubspec.yaml
+```
+
+## PREVIEW
+
+
+https://github.com/user-attachments/assets/bc452676-3fd2-4a1d-9ac7-b02fffbfc606
+
+
+## 📄 License
+
+This project is licensed under the MIT License.
