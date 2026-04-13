@@ -1,0 +1,1 @@
+enum LoaderType { dots, progressBar }
